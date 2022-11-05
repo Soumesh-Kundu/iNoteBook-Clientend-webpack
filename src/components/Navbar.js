@@ -12,7 +12,7 @@ export default function Navbar(props) {
         <>
             <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <h5 className="logoColor">iNoteBook</h5>
+                    <Link className="logoColor f-1">iNoteBook</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

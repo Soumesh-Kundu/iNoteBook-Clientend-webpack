@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,31 +14,34 @@ import NoteState from "./context/notes/NoteState";
 
 function App() {
   const [alert, setAlert] = useState(null)
+  const [alertTimer,setAlertTimer]=useState(null)
 
-  const showAlert = (header,messege, type) => {
+  const showAlert = (header, messege, type) => {
+    clearTimeout(alertTimer)
     setAlert(
       {
-        heading:header,
+        heading: header,
         msg: messege,
         type: type
       }
-    )
-    setTimeout(() => {
-      setAlert(null)
-    }, 2200)
+      )
+      let timer= setTimeout(() => {
+        setAlert(null)
+      }, 3000)
+      setAlertTimer(timer)
   }
   return (
     <div className="App">
       <NoteState alert={showAlert} >
         <Router>
           <Navbar showAlert={showAlert} />
-          <Alert alert={alert}/>
+          <Alert alert={alert} />
           <div className="container">
             <Routes>
-              <Route path='/' element={<Home/>} />
+              <Route path='/' element={<Home />} />
               <Route path='/about' element={<About />} />
               <Route path='/login' element={<Login showAlert={showAlert} />} />
-              <Route path='/signup' element={<SignUp showAlert={showAlert}/>} />
+              <Route path='/signup' element={<SignUp showAlert={showAlert} />} />
             </Routes>
           </div>
         </Router>

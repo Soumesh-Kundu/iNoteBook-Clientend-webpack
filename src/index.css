@@ -21,3 +21,8 @@ i{
 .logoColor{
   color:#36ac9c;
 }
+.logoColor.f-1{
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0 5px
+}
